@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/lunch">
+
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/imageView"-->
+        <!--android:contentDescription="@string/ui_tabname_entree"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:src="@drawable/lunch"/>-->
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/radioGroup">
+
+        <RadioButton
+            android:text="@string/rice"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton7"
+            android:textColor="@android:color/holo_red_dark"/>
+
+        <RadioButton
+            android:text="@string/chicken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton8"
+            android:textColor="@android:color/holo_red_dark"/>
+
+        <RadioButton
+            android:text="@string/steak"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton9"
+            android:textColor="@android:color/holo_red_dark"/>
+
+    </RadioGroup>
+
+
+</RelativeLayout>

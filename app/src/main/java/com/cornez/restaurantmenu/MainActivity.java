@@ -77,15 +77,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onRadioButtonCLicked(View view) {
-
-        boolean checked = ((RadioButton) view).isChecked();
-
-        switch(view.getId()) {
-
-
-        }
-    }
 }
 
 
