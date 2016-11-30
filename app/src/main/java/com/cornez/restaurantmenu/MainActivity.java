@@ -3,28 +3,21 @@ package com.cornez.restaurantmenu;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBar.TabListener;
 import android.support.v4.app.Fragment;
-import android.app.Activity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.support.v4.app.FragmentTransaction;
 import android.content.Context;
-
+import android.view.View;
+import android.widget.RadioGroup;
+import android.widget.RadioButton;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAB_KEY_INDEX = "tab_key";
-    private Fragment breakfastFragment;
-    private Fragment lunchFragment;
-    private Fragment snackFragment;
-    private Fragment dinnerFragment;
+    private Fragment appetizerFragment;
+    private Fragment entreeFragment;
+    private Fragment dessertFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,28 +30,24 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setDisplayShowTitleEnabled(false);
 
         //CREATE THE TABS AND BIND THEM TO THE ACTION BAR
-        ActionBar.Tab breakfastTab = actionBar.newTab().setText(getString(R.string.ui_tabname_breakfast));
-        ActionBar.Tab lunchTab = actionBar.newTab().setText(R.string.ui_tabname_lunch);
-        ActionBar.Tab snackTab = actionBar.newTab().setText(R.string.ui_tabname_snack);
-        ActionBar.Tab dinnerTab = actionBar.newTab().setText(R.string.ui_tabname_dinner);
+        ActionBar.Tab appetizerTab = actionBar.newTab().setText(getString(R.string.ui_tabname_appetizer));
+        ActionBar.Tab entreeTab = actionBar.newTab().setText(R.string.ui_tabname_entree);
+        ActionBar.Tab desssertTab = actionBar.newTab().setText(R.string.ui_tabname_dessert);
 
         //CREATE EACH FRAGMENT AND BIND THEM TO THE ACTION BAR
-        breakfastFragment = new BreakfastFragment();
-        snackFragment = new SnackFragment();
-        lunchFragment = new LunchFragment();
-        dinnerFragment = new DinnerFragment();
+        appetizerFragment = new AppetizerFragment();
+        entreeFragment = new EntreeFragment();
+        dessertFragment = new DessertFragment();
 
         //SET THE LISTENER EVENTS FOR EACH OF THE ACTIONBAR TABS
-        breakfastTab.setTabListener(new MyTabsListener(breakfastFragment, getApplicationContext()));
-        snackTab.setTabListener(new MyTabsListener(snackFragment, getApplicationContext()));
-        lunchTab.setTabListener(new MyTabsListener(lunchFragment, getApplicationContext()));
-        dinnerTab.setTabListener(new MyTabsListener(dinnerFragment, getApplicationContext()));
+        appetizerTab.setTabListener(new MyTabsListener(appetizerFragment, getApplicationContext()));
+        entreeTab.setTabListener(new MyTabsListener(entreeFragment, getApplicationContext()));
+        desssertTab.setTabListener(new MyTabsListener(dessertFragment, getApplicationContext()));
 
         //ADD EACH OF THE TABS TO THE ACTION BAR
-        actionBar.addTab(breakfastTab);
-        actionBar.addTab(lunchTab);
-        actionBar.addTab(snackTab);
-        actionBar.addTab(dinnerTab);
+        actionBar.addTab(appetizerTab);
+        actionBar.addTab(entreeTab);
+        actionBar.addTab(desssertTab);
 
         //RESTORE NAVIGATION
         if(savedInstanceState != null) {
@@ -85,6 +74,16 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
             ft.remove(fragment);
+        }
+    }
+
+    public void onRadioButtonCLicked(View view) {
+
+        boolean checked = ((RadioButton) view).isChecked();
+
+        switch(view.getId()) {
+
+
         }
     }
 }
