@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/fragment_container"
         android:orientation="vertical"
-        android:layout_gravity="">
+        android:layout_gravity="center_horizontal">
     </LinearLayout>
 
 </LinearLayout>
